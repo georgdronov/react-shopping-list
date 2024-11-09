@@ -1,4 +1,3 @@
-// src/components/ShoppingList/ShoppingList.js
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchItems } from "../../redux/shoppingListSlice";
@@ -6,7 +5,7 @@ import ItemForm from "../ItemForm/ItemForm";
 import Item from "../Item/Item";
 import { ListGroup } from "react-bootstrap";
 
-export const ShoppingList = () => {
+const ShoppingList = () => {
   const dispatch = useDispatch();
   const items = useSelector((state) => state.shoppingList.items);
   const status = useSelector((state) => state.shoppingList.status);
@@ -30,3 +29,5 @@ export const ShoppingList = () => {
     </div>
   );
 };
+
+export default ShoppingList;

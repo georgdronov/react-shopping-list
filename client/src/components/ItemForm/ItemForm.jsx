@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/shoppingListSlice";
 import { Form, Button } from "react-bootstrap";
 
-export const ItemForm = () => {
+const ItemForm = () => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
@@ -44,3 +44,5 @@ export const ItemForm = () => {
     </Form>
   );
 };
+
+export default ItemForm;
