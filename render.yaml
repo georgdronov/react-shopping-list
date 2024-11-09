@@ -1,0 +1,10 @@
+version: 1
+services:
+  - type: web
+    name: react-shopping-list
+    env: node
+    plan: free
+    buildCommand: npm install  
+    startCommand: npm start   
+    nodeVersion: 18          
+    autoDeploy: true          
