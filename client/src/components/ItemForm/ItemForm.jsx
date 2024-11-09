@@ -1,8 +1,7 @@
-// src/components/ItemForm/ItemForm.js
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../../redux/shoppingListSlice";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 
 const ItemForm = () => {
   const dispatch = useDispatch();
@@ -19,29 +18,40 @@ const ItemForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} className="mb-4">
-      <Form.Group controlId="itemName">
-        <Form.Label className="text-light">Item Name</Form.Label>
-        <Form.Control
-          type="text"
-          placeholder="Enter item name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group controlId="itemQuantity">
-        <Form.Label className="text-light">Quantity</Form.Label>
-        <Form.Control
-          type="number"
-          placeholder="Enter quantity"
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit" className="mt-3">
-        Add Item
-      </Button>
-    </Form>
+    <Container className="d-flex justify-content-center align-items-center mt-5">
+      <div
+        className="p-4 bg-dark rounded border border-light"
+        style={{ maxWidth: "400px", width: "100%" }}
+      >
+        <Form onSubmit={handleSubmit} className="mb-4">
+          <Form.Group controlId="itemName" className="mb-3">
+            <Form.Label className="text-light">Item Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter item name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="bg-dark text-light"
+            />
+          </Form.Group>
+          <Form.Group controlId="itemQuantity" className="mb-3">
+            <Form.Label className="text-light">Quantity</Form.Label>
+            <Form.Control
+              type="number"
+              placeholder="Enter quantity"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              className="bg-dark text-light"
+            />
+          </Form.Group>
+          <div className="d-flex justify-content-center">
+            <Button variant="success" type="submit" className="btn-lg mt-3">
+              Add Item
+            </Button>
+          </div>
+        </Form>
+      </div>
+    </Container>
   );
 };
 
